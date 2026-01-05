@@ -5,10 +5,11 @@ userButton.addEventListener("click", async (e) => {
         const response = await fetch('https://jsonplaceholder.typicode.com/users');
         const data = await response.json();
 
-        const cardsContainer = document.createElement("div");
+        const cardsContainer = document.getElementById("cardsContainer");
 
         data.forEach(user => {
             const card = document.createElement('div');
+            card.className = "card";
             card.innerHTML = `
                 <h4>User ${user.id} info</h4>
                 <ul>
